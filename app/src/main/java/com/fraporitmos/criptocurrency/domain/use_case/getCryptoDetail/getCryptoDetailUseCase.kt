@@ -1,5 +1,6 @@
 package com.fraporitmos.criptocurrency.domain.use_case.getCryptoDetail
 
+import android.util.Log
 import com.fraporitmos.criptocurrency.common.Resource
 import com.fraporitmos.criptocurrency.data.remote.dto.CryptoDetailDto.toCryptoDetail
 import com.fraporitmos.criptocurrency.domain.model.CryptoDetail
@@ -19,7 +20,6 @@ private val repository: CryptoRepository
             val coin = repository.getDetailCrypto(coinId).toCryptoDetail()
             emit(Resource.Success<CryptoDetail>(coin))
         } catch(e: HttpException) {
-
             emit(Resource.Error<CryptoDetail>(e.localizedMessage ?: "An unexpected error occured"))
         } catch(e: IOException) {
             emit(Resource.Error<CryptoDetail>("Couldn't reach server. Check your internet connection."))

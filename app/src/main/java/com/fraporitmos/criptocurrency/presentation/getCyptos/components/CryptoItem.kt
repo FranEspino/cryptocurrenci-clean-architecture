@@ -32,14 +32,18 @@ fun CryptoItem (
         Text(
             text = "${crypto.rank}. ${crypto.name} (${crypto.symbol})",
             style = MaterialTheme.typography.body1,
-            overflow = TextOverflow.Ellipsis
+            overflow = TextOverflow.Ellipsis,
+            color = Color.White
+        //color
+
         )
         Text(
             text = if(crypto.isActive) "active" else "inactive",
-            color = if(crypto.isActive) Color.Green else Color.Red,
+            color = if(crypto.isActive) Color.Green else Color.White,
             fontStyle = FontStyle.Italic,
             textAlign = TextAlign.End,
             style = MaterialTheme.typography.body2,
+
             modifier = Modifier.align(CenterVertically)
         )
     }

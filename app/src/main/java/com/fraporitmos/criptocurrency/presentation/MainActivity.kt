@@ -1,6 +1,7 @@
 package com.fraporitmos.criptocurrency.presentation
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
@@ -35,7 +36,8 @@ class MainActivity : ComponentActivity() {
                         ) {
                             CryptoDetailScreen()
                         }
-                    }
+
+                }
                 }
             }
         }

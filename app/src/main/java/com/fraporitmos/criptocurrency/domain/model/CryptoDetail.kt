@@ -9,6 +9,7 @@ data class CryptoDetail (
     val symbol: String,
     val rank: Int,
     val isActive: Boolean,
+    val logo: String,
     val tags: List<String>,
     val team: List<TeamMember>
 )

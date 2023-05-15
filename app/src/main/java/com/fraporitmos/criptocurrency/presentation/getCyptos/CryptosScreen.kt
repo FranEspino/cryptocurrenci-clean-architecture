@@ -1,5 +1,7 @@
 package com.fraporitmos.criptocurrency.presentation.getCyptos
 
+import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,10 +14,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import coil.compose.rememberImagePainter
+
 import com.fraporitmos.criptocurrency.presentation.Screen
 import com.fraporitmos.criptocurrency.presentation.getCyptos.components.CryptoItem
 
@@ -25,7 +30,7 @@ fun CryptosScreen(
     viewModel: GetCrptosViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize().background(Color.Black)) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(state.coins) {
                 CryptoItem(
